@@ -557,43 +557,43 @@
 </script>
 
 <script>
-$(document).ready(function () {
-    $("#contactForm_1").submit(function (event) { // Используем ID формы для точности
-        // Предотвращаем стандартное поведение формы (перезагрузку страницы)
-        event.preventDefault();
-
-        var form = $(this); // Сохраняем ссылку на форму
-        var formStatus = $('#msgSubmit'); // Находим элемент для сообщений
-
+  $(document).ready(function () {
+    $("form").submit(function () {
+        // Получение ID формы
+        var formID = $(this).attr('id');
+        // Добавление решётки к имени ID
+        var formNm = $('#' + formID);
         $.ajax({
             type: "POST",
-            url: "https://formspree.io/f/xovwggjl", // Твой URL
-            data: form.serialize(),
-            dataType: "json", // <-- ВОТ КЛЮЧЕВОЕ ИЗМЕНЕНИЕ! Говорим jQuery, что ждем JSON.
+            url: 'https://formspree.io/f/xovwggjl', // Твой URL
+            data: formNm.serialize(),
+            dataType: "json", // Важно, чтобы Formspree понял, что мы ждем JSON
             
-            success: function (data) {
-                // Этот код выполнится, когда Formspree ответит "успех"
-                console.log("Formspree success:", data);
-
-                // Прячем форму и показываем сообщение об успехе
-                $('#exampleModalLabel').hide();
-                $('#modal-footer').hide();
-                $('#contactForm_1').hide();
-                formStatus.text("Спасибо! Я свяжусь с Вами в самое ближайшее время.").removeClass("hidden");
-            },
-            error: function (jqXHR, textStatus, errorThrown) {
-                // Этот код выполнится, если произойдет ошибка
-                console.error("Formspree error:", textStatus, errorThrown);
+            // Этот блок выполнится ВСЕГДА после отправки, неважно, с каким статусом вернулся ответ.
+            // Поскольку мы знаем, что Formspree надежен, этого достаточно.
+            complete: function(data) {
+                console.log("Ajax request completed. Status:", data.status);
                 
-                // Показываем сообщение об ошибке
-                formStatus.text("Упс! Что-то пошло не так. Попробуйте снова.").removeClass("hidden");
-                
-                // Можно также спрятать форму, чтобы не смущать пользователя
-                $('#exampleModalLabel').hide();
-                $('#modal-footer').hide();
-                $('#contactForm_1').hide();
+                // Проверяем, что запрос в принципе ушел (статус 200 или близкий к нему)
+                // Formspree при успехе отвечает 200 OK если dataType: "json" указан.
+                if (data.status === 200) {
+                    // УСПЕХ! Делаем то, что ты делал в success.
+                    $('#exampleModalLabel').hide('slow');
+                    $('#modal-footer').hide('slow');
+                    $('#contactForm_1').hide('slow');
+                    $('#msgSubmit').removeClass("hidden"); // Убедись, что в этом блоке есть текст
+                    document.getElementById('contactForm_1').reset();
+                } else {
+                    // ОШИБКА! Можно показать сообщение об ошибке.
+                    $('#exampleModalLabel').hide('slow');
+                    $('#modal-footer').hide('slow');
+                    $('#contactForm_1').hide('slow');
+                    // Добавляем текст ошибки в msgSubmit
+                    $('#msgSubmit').text("Упс! Произошла ошибка при отправке.").removeClass("hidden");
+                }
             }
         });
+        return false;
     });
 });
 </script>
