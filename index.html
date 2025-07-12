@@ -557,26 +557,29 @@
 </script>
 
 <script>
-  $(document).ready(function () {
-    $("form").submit(function () {
-        // Получение ID формы
-        var formID = $(this).attr('id');
-        // Добавление решётки к имени ID
-        var formNm = $('#' + formID);
+$(document).ready(function () {
+    $("#contactForm_1").submit(function (event) { // Используем ID формы для точности
+        // Предотвращаем стандартное поведение формы (перезагрузку страницы)
+        event.preventDefault();
+
+        var form = $(this); // Сохраняем ссылку на форму
+        var formStatus = $('#msgSubmit'); // Находим элемент для сообщений
+
         $.ajax({
             type: "POST",
-            url: 'https://formspree.io/f/xovwggjl',
+            url: "https://formspree.io/f/xovwggjl", // Твой URL
             data: form.serialize(),
-            dataType: "json",
+            dataType: "json", // <-- ВОТ КЛЮЧЕВОЕ ИЗМЕНЕНИЕ! Говорим jQuery, что ждем JSON.
             
             success: function (data) {
-                // Вывод текста результата отправки
-                $('#exampleModalLabel').hide('slow');
-                $('#modal-footer').hide('slow');
-                $('#contactForm_1').hide('slow');
+                // Этот код выполнится, когда Formspree ответит "успех"
+                console.log("Formspree success:", data);
+
+                // Прячем форму и показываем сообщение об успехе
+                $('#exampleModalLabel').hide();
+                $('#modal-footer').hide();
+                $('#contactForm_1').hide();
                 formStatus.text("Спасибо! Я свяжусь с Вами в самое ближайшее время.").removeClass("hidden");
-                document.getElementById('contactForm_1').reset();
-                
             },
             error: function (jqXHR, textStatus, errorThrown) {
                 // Этот код выполнится, если произойдет ошибка
@@ -591,7 +594,6 @@
                 $('#contactForm_1').hide();
             }
         });
-        return false;
     });
 });
 </script>
