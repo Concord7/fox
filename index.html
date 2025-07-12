@@ -566,20 +566,29 @@
         $.ajax({
             type: "POST",
             url: 'https://formspree.io/f/xovwggjl',
-            data: formNm.serialize(),
+            data: form.serialize(),
+            dataType: "json",
             
             success: function (data) {
                 // Вывод текста результата отправки
                 $('#exampleModalLabel').hide('slow');
                 $('#modal-footer').hide('slow');
                 $('#contactForm_1').hide('slow');
-                $('#msgSubmit').removeClass( "hidden" );
+                formStatus.text("Спасибо! Я свяжусь с Вами в самое ближайшее время.").removeClass("hidden");
                 document.getElementById('contactForm_1').reset();
                 
             },
-            error: function (jqXHR, text, error) {
-                // Вывод текста ошибки отправки
-                $(formNm).html(error);
+            error: function (jqXHR, textStatus, errorThrown) {
+                // Этот код выполнится, если произойдет ошибка
+                console.error("Formspree error:", textStatus, errorThrown);
+                
+                // Показываем сообщение об ошибке
+                formStatus.text("Упс! Что-то пошло не так. Попробуйте снова.").removeClass("hidden");
+                
+                // Можно также спрятать форму, чтобы не смущать пользователя
+                $('#exampleModalLabel').hide();
+                $('#modal-footer').hide();
+                $('#contactForm_1').hide();
             }
         });
         return false;
