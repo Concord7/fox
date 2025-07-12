@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Анна - Чакролог и Астролог</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
+        <!-- SimpleLightbox plugin CSS-->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <!-- Video player CSS-->
+        <link href="css/video-js.css" rel="stylesheet" />
+        <link href="css/fantasy.css" rel="stylesheet">
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand">A</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li class="nav-item"><a class="nav-link" href="#about">Что это?</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Обо мне</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Услуги</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Masthead-->
+        <header class="masthead">
+		
+
+<!-- Модальное окно -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" id="modal-dialog">
+	<div class="modal-content">
+	  <div class="modal-header" id="modal-header">
+		<h5 class="modal-title" id="exampleModalLabel">Укажите как с Вами связаться</h5>
+		<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+	  </div>
+	  <div class="modal-body">
+	   <div id="msgSubmit" class="msgSubmit hidden">Я свяжусь с Вами в самое ближайшее время!</div>
+	   <form action="" id="contactForm_1" name="form">
+		<input type="hidden" id="hiddenField" name="hiddenField">
+		<div class="form-floating mb-3"> 
+			<input class="form-control" name="phone" id="phone" type="text" required placeholder="Номер телефона..." /> 
+			<label for="name">Номер телефона</label>								
+		</div>
+		<div class="form-floating mb-3"> 	
+		
+		<select class="form-control" name="hero" required="required" id="value2">
+		<option label="Выберите мессенджер"></option>
+		<option value="Telegram">Telegram</option>
+		<option value="WhatsApp">WhatsApp</option>
+		</select>
+		</div>
+							
+							
+							
+      </div>
+      <div class="modal-footer" id="modal-footer">
+        <button type="submit" class="btn btn-primary" id="submitButton">Отправить</button>
+      </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Модальное окно калькулятор -->
+<div class="modal fade" id="calcModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div style="max-width: 870px;" class="modal-dialog" id="modal-dialog">
+	<div class="modal-content">
+	  <div class="modal-header" id="modal-header">
+		<h5 class="modal-title" id="exampleModalLabel">Потенциал личности</h5>
+		<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+	  </div>
+	  <div class="container-calc">
+		  
+	   <div class="description-calc">Введите дату рождения, чтобы узнать показатели ваших чакр в процентах:</div>
+        <input type="date" id="birthdate">
+        <button id="calculateBtn" class="btn-calc">Рассчитать</button>
+
+        <div id="results" class="results-container">
+            <!-- Здесь будут отображаться результаты чакр -->
+        </div>						
+							
+							
+      </div>
+      
+      
+    </div>
+  </div>
+</div>
+<!--
+						<div id="dark1">
+						<div id="okno">
+							<a href="#" class="close">X</a>
+						  <div style="margin-top: 2rem;">Укажите как с Вами связаться</div><br>
+						  <form id="contactForm_1">
+							<input type="hidden" id="hiddenField" name="hiddenField" value="">
+							<div class="form-floating mb-3"> 
+								<input class="form-control" id="name" type="text" placeholder="Номер телефона..." /> 
+								<label for="name">Номер телефона</label>								
+							</div>
+							<div class="form-floating mb-3"> 	
+							
+							<select class="form-control" name="hero[]" id="value2">
+							<option selected>Выберите мессенджер</option>
+							<option value="1">Telegram</option>
+							<option value="2">WhatsApp</option>
+							</select><br>
+							</div>
+							<div class="d-grid"><button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Отправить</button></div>
+							
+							</form>
+						  
+						</div>
+						</div>
+-->
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                        <h1 class="text-white font-weight-bold">УЗНАЙ СВОЮ СУПЕРСИЛУ!<br>ПОЛУЧИ КЛЮЧ К СВОЕЙ СЧАСТЛИВОЙ ЖИЗНИ!</h1>
+                        <hr class="divider" />
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 mb-5">Консультация по чакроанализу от <br>Григоренко Анны</p>
+                        <button type="button" class="btn btn-secondary btn-xl" data-bs-toggle="modal" data-bs-target="#calcModal" id="calculator">
+						  РАССЧИТАТЬ ПОТЕНЦИАЛ
+						</button><br><br>
+                        <button type="button" class="btn btn-primary btn-xl" data-bs-toggle="modal" data-bs-target="#exampleModal" id="consult">
+						  БЕСПЛАТНАЯ КОНСУЛЬТАЦИЯ
+						</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- About-->
+        <div class="header-transit"></div>
+        <section class="page-section bg-primary" id="about">
+			<div class="header-transit"></div>
+            <div class="container px-4 px-lg-5">
+                <div class="row gx-4 gx-lg-5 justify-content-center">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="text-white mt-0">Что такое чакроанализ?</h2>
+                        <hr class="divider divider-light" />
+                        <p class="text-white-75 mb-4">После консультации Вы узнаете свое предназначение, кармическую задачу, как открыть свой денежный поток и увеличить доход.<br><br>Вы получите рекомендации, как придти в гармонию с собой и жить наслаждаясь.</p>
+                        <hr class="divider divider-light" />
+                        <div class="container px-4 px-lg-5">
+                
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><img class="img-thumbnail" src="assets/img/111_n.jpg" alt="..." /></div>
+                            
+                            <p class="text-white-75 mb-4">Почему деньги ко мне не идут?</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><img class="img-thumbnail" src="assets/img/333_n.jpg" alt="..." /></div>
+                            
+                            <p class="text-white-75 mb-4">Почему черная полоса не заканчивается?</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><img class="img-thumbnail" src="assets/img/111_n.jpg" alt="..." /></div>
+                            
+                            <p class="text-white-75 mb-4">Какое дело принесет мне успех и признание?</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><img class="img-thumbnail" src="assets/img/333_n.jpg" alt="..." /></div>
+                            
+                            <p class="text-white-75 mb-4">Как вырастить из ребенка счастливого человека?</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+                        <a class="btn btn-primary btn-xl" href="#portfolio">ПОЛУЧИТЬ ОТВЕТЫ</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Services-->
+        <div class="header-transit-1"></div>
+        <div class="services">
+        <section class="page-section" id="services">
+			<div class="container">
+                <div class="row g-0">
+                    <div class="col-sm-6 container-sm">
+						<img class="img-fluid card" src="assets/img/photo.jpg" alt="..." />
+					</div>
+					<div class="col-sm-4 container-sm">
+						<h3 class="h4 mb-2 text-center text-white">Анна Григоренко</h3>
+						<h6 class="h6 mb-2 text-center text-muted">Дипломированный чакролог</h6>
+						<hr class="divider divider-light" />
+                        <p class="text-white-75">Я много лет работала в сфере медицины. И точно знаю, как важно оказывать качественные услуги и ответственно подходить к своей работе. <br><br>Поэтому мои разборы похожи на инструкцию к немецкой технике. После ее прочтения каждый винтик вашей жизни встанет на место. <br><br>Останется только двигаться в правильном направлении.</p>
+						<hr class="divider divider-light" />
+						<a class="portfolio-box" href="assets/img/portfolio/fullsize/7.jpg" title="Диплом">
+                            <img class="img-fluid" src="assets/img/portfolio/thumbnails/7.jpg" alt="..." />
+                            
+                        </a>
+					</div>
+				</div>
+				
+				<div class="col-lg-3 col-sm-6">
+                        
+                    </div>
+			</div>
+            
+         </div>
+        </section>
+        <!-- Portfolio-->
+        <div class="header-transit-2"></div>
+        <section class="page-section bg-primary" id="portfolio">
+            <div class="container">
+                <div class="row g-0">
+					
+                    <div class="col-lg-4 col-sm-12">
+						
+<!--
+						<div id="dark">
+						<div id="okno">
+							<a href="#portfolio" class="close">X</a>
+						  <div style="margin-top: 2rem;">Укажите как с Вами связаться</div><br>
+						  <form id="contactForm">
+							<input type="hidden" id="hiddenField" name="hiddenField" value="">
+							<div class="form-floating mb-3"> 
+								<input class="form-control" id="name" type="text" placeholder="Номер телефона..." /> 
+								<label for="name">Номер телефона</label>								
+							</div>
+							<div class="form-floating mb-3"> 	
+							
+							<select class="form-control" name="hero[]" id="value2">
+							<option selected>Выберите мессенджер</option>
+							<option value="1">Telegram</option>
+							<option value="2">WhatsApp</option>
+							</select><br>
+							</div>
+							<div class="d-grid"><button class="btn btn-primary btn-xl disabled" id="submitButton" type="submit">Отправить</button></div>
+							
+							</form>
+						  
+						</div>
+						</div>
+-->
+						 
+                        
+                            <div class="price-box">
+                                <div class="project-category text-dark">Экскурсия</div><p>
+                                <div class="project-name text-info">Мы отправимся на самую увлекательную Экскурсию в твоей жизни. <br><br>Мы познакомимся с основными твоими достопримечательностями = чакрами, узнаем главные кармические задачи и заглянем в твой прогноз. 
+<br><br>Используя свою третью чакру, ты сможешь увеличить доход, построить счастливые отношения включая вторую чакру и отстоять наконец-то свои личные границы с помощью третьей чакры. <br><br>После экскурсии я отвечу на все вопросы, но применять полученные инструменты придется самостоятельно.</div>
+				            <!--<br><div class="text-center"><span style="color:#3496ff;line-height:1.4;font-size:24px;font-weight:700;">0</span><span> ₽</span></div>-->
+				            <div class="cont-ticket">
+								<img class="img-ticket" src="assets/img/excursion.png" alt="..." />
+							</div>                                
+                            </div>
+                            <div class="text-center">
+							
+							<button type="button" class="btn btn-primary btn-xl" data-bs-toggle="modal" data-bs-target="#exampleModal" id="excursion">
+							  УЗНАТЬ ЦЕНУ
+							</button>
+							</div>
+                        
+                    </div>
+                    <div class="col-lg-4 col-sm-12">
+                        
+                            <div class="price-box">
+								<div class="project-category text-dark">Экспедиция</div><p>
+                                <div class="project-name text-info">Здесь тебя ждет увлекательное путешествие на месяц. Мы познакомимся с главными достопримечательностями = чакрами, поймем предназначение и заглянем в прогноз чтобы узнать, что ждет впереди.<br><br> Но в этом путешествии я буду твоим верным спутником не давая сбиться с пути. Я пропишу для тебя план, который будет задействовать твои сильные стороны и поможет реализовать твои цели в карьере, отношениях и финансах. <br><br>Каждую неделю мы будем встречаться по видео связи и обсуждать задачи и результаты. Чат со мной будет твоим островком безопасности, где выслушают, поддержат и направят.</div>
+							<!--<br><div class="text-center"><span style="color:#3496ff;line-height:1.4;font-size:24px;font-weight:700;">0</span><span> ₽</span></div>-->                             
+							<div class="cont-ticket">
+								<img class="img-ticket" src="assets/img/expedition.png" alt="..." />
+							</div>		
+                            </div>
+                            <!---->
+                            <div class="text-center">
+							<button type="button" class="btn btn-primary btn-xl" data-bs-toggle="modal" data-bs-target="#exampleModal" id="expedition">
+							  УЗНАТЬ ЦЕНУ
+							</button>
+							</div>
+                        
+                    </div>
+                    <div class="col-lg-4 col-sm-12">
+                        
+                            <div class="price-box">
+								<div class="project-category text-dark">Круиз</div><p>
+                                <div class="project-name text-info">Мы отправимся в трехмесячное путешествие. <br><br>Где я за ручку буду вести тебя к твоим целям, включая энергию на чакрах, учитывая твои кармические задачи, предназначение и индивидуальный прогноз. <br><br>Каждую неделю мы будем встречаться по видео связи и обсуждать задачи и результаты. <br><br>Чат со мной будет твоим островком безопасности, где выслушают, поддержат и направят.</div>
+				            <!--<br><div class="text-center"><span style="color:#3496ff;line-height:1.4;font-size:24px;font-weight:700;">0</span><span> ₽</span></div>-->                               
+							<div class="cont-ticket">
+								<img class="img-ticket" src="assets/img/cruise.png" alt="..." />
+							</div>	
+                            </div>
+                            <!---->
+                            <div class="text-center">
+							<button type="button" class="btn btn-primary btn-xl" data-bs-toggle="modal" data-bs-target="#exampleModal" id="cruise">
+							  УЗНАТЬ ЦЕНУ
+							</button>
+							</div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="row g-0 justify-content-center">
+					
+                    
+                    <div class="col-lg-4 col-sm-12">
+                        
+                            <div class="price-box">
+								<div class="project-category text-dark">Прогноз на год</div><p>
+                                <div class="project-name text-info">Тебе нужен прогноз на год если ты:<br><br> ✔  Хочешь знать, что тебя ждет в будущем году?<br> ✔  Когда лучше планировать свадьбу, чтобы не разводиться через полгода.<br> ✔  На какой месяц поставить обучение, чтобы не просто слить деньги. А получить реальный результат.<br> ✔  Когда просить прибавку к зарплате, чтобы реально прибавили, а не послали.<br><br>Все это есть в твоем прогнозе. Это инструкция, как прожить этот год в кайф и с пользой для себя.<br><br>Для визуалов оформляю в красивый текстовый файл. Для тех, кто любит ушами записываю голосовые на каждый месяц.</div>
+                                <!--<br><div class="text-center"><span style="color:#3496ff;line-height:1.4;font-size:24px;font-weight:700;">0</span><span> ₽</span></div>-->                               								
+                            </div>
+                            <!---->
+                            <div class="text-center">
+							<button type="button" class="btn btn-primary btn-xl" data-bs-toggle="modal" data-bs-target="#exampleModal" id="prognoz">
+							  УЗНАТЬ ЦЕНУ
+							</button>
+							</div>
+                        
+                    </div>
+                    
+                    
+                </div>
+                
+            </div>
+                
+            </div>
+        
+        
+        
+        
+            
+        </div>
+        </section>
+        <!-- Call to action-->
+        <div class="header-transit-1"></div>
+       
+        <div class="services">
+						
+                        
+                    
+        <div class="container px-4 px-lg-5 h-100">
+						<h1 class="text-white font-weight-bold text-center" style="padding: 30px 0px 0px;">ОТЗЫВЫ</h1>
+						<hr class="divider divider-light" />
+                <div class="row g-0">
+                    <div class="col-sm-5 container-sm text-center">
+						  <video
+							id="my-video"
+							class="video-js vjs-theme-fantasy vjs-4-3"
+							controls
+							preload="auto"
+							data-setup="{}"
+						  >
+							<source src="assets/video/IMG_1.MP4" type="video/mp4" />
+							
+							<p class="vjs-no-js">
+							  To view this video please enable JavaScript, and consider upgrading to a
+							  web browser that
+							</p>
+						  </video>
+					</div>
+					<div class="col-sm-5 container-sm text-center">
+						<video
+							id="my-video1"
+							class="video-js vjs-theme-fantasy vjs-4-3"
+							controls
+							preload="auto"
+							data-setup="{}"
+						  >
+							<source src="assets/video/IMG_2.MP4" type="video/mp4" />
+							
+							<p class="vjs-no-js">
+							  To view this video please enable JavaScript, and consider upgrading to a
+							  web browser that
+							</p>
+						  </video>
+					</div>
+				</div>
+            </div>
+         </div>   
+         
+         
+        <section class="bg-dark text-white text-center" style="padding: 2rem 0;">
+            <div class="row g-0">
+                    <div class="col-lg-4">
+                        
+                            <div class="portfolio-box-caption">
+                                <!--<div class="project-category text-white-50">Category</div>-->
+                                <div class="project-name"><a href="https://vk.com/grigorenko__anna" target="_blank">VK</a></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4">
+                        
+                            <div class="portfolio-box-caption">
+                              <!--<div class="project-category text-white-50">Category</div>-->
+                                <div class="project-name"><a href="https://www.instagram.com/grigorenko.fox/" target="_blank">Instagram</a></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-4">
+                        
+                            <div class="portfolio-box-caption">
+                              <!--<div class="project-category text-white-50">Category</div>-->
+                                <div class="project-name"><a href="https://t.me/grigorenko_an" target="_blank">Telegram</a></div>
+                            </div>
+                        </a>
+                    </div>
+        </section>
+        <!-- Contact-->
+        
+        <!-- Footer-->
+        <footer class="bg-light py-5">
+            <div class="container px-4 px-lg-5"><div class="small text-center text-muted">&copy; 2023 - Anna Grigorenko</div></div>
+            <!-- Yandex.Metrika counter -->
+		<script type="text/javascript" >
+		   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+		   m[i].l=1*new Date();
+		   for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+		   k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+		   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+		   ym(94467658, "init", {
+				clickmap:true,
+				trackLinks:true,
+				accurateTrackBounce:true
+		   });
+		</script>
+		<noscript><div><img src="https://mc.yandex.ru/watch/94467658" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+		<!-- /Yandex.Metrika counter -->
+        </footer>
+        <!-- Bootstrap core JS-->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        <!-- SimpleLightbox plugin JS-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
+        <!-- Core theme JS-->
+        <script src="js/scripts.js"></script>
+        <!-- Video player JS-->
+        <script async src="js/video.min.js"></script>
+        <!-- Calculator-->
+        <script src="js/calc-script.js"></script>
+        
+        <script>
+		  window.addEventListener("DOMContentLoaded", function() {
+  [].forEach.call( document.querySelectorAll('#phone'), function(input) {
+    var keyCode;
+    function mask(event) {
+      event.keyCode && (keyCode = event.keyCode);
+      var pos = this.selectionStart;
+      if (pos < 3) event.preventDefault();
+      var matrix = "+7 (___) ___ ____",
+          i = 0,
+          def = matrix.replace(/\D/g, ""),
+          val = this.value.replace(/\D/g, ""),
+          new_value = matrix.replace(/[_\d]/g, function(a) {
+              return i < val.length ? val.charAt(i++) : a
+          });
+      i = new_value.indexOf("_");
+      if (i != -1) {
+          i < 5 && (i = 3);
+          new_value = new_value.slice(0, i)
+      }
+      var reg = matrix.substr(0, this.value.length).replace(/_+/g,
+          function(a) {
+              return "\\d{1," + a.length + "}"
+          }).replace(/[+()]/g, "\\$&");
+      reg = new RegExp("^" + reg + "$");
+      if (!reg.test(this.value) || this.value.length < 5 || keyCode > 47 && keyCode < 58) {
+        this.value = new_value;
+      }
+      if (event.type == "blur" && this.value.length < 5) {
+        this.value = "";
+      }
+    }
+
+    input.addEventListener("input", mask, false);
+    input.addEventListener("focus", mask, false);
+    input.addEventListener("blur", mask, false);
+    input.addEventListener("keydown", mask, false);
+
+  });
+
+});
+</script>
+<script src="js/jquery.min.js"></script>
+<script>
+  $(document).ready(function (){
+    // 1 кнопка
+    $('#consult').on('click', function() {
+    $('#hiddenField').val('Бесплатная консультация');
+    $('#exampleModalLabel').show();
+    $('#modal-footer').show();
+    $('#contactForm_1').show();
+    var element = document.getElementById("msgSubmit");
+                element.classList.add("hidden");
+    });
+ 
+    // 2 кнопка
+    $('#prognoz').on('click', function() {
+    $('#hiddenField').val('Прогноз на год');
+    $('#exampleModalLabel').show();
+    $('#modal-footer').show();
+    $('#contactForm_1').show();
+    var element = document.getElementById("msgSubmit");
+                element.classList.add("hidden");
+    });
+ 
+    // 3 кнопка
+    $('#excursion').on('click', function() {
+    $('#hiddenField').val('Экскурсия');
+    $('#exampleModalLabel').show();
+    $('#modal-footer').show();
+    $('#contactForm_1').show();
+    var element = document.getElementById("msgSubmit");
+                element.classList.add("hidden");
+    });
+    
+    // 4 кнопка
+    $('#expedition').on('click', function() {
+    $('#hiddenField').val('Экспедиция');
+    $('#exampleModalLabel').show();
+    $('#modal-footer').show();
+    $('#contactForm_1').show();
+    var element = document.getElementById("msgSubmit");
+                element.classList.add("hidden");
+    });
+    
+    // 5 кнопка
+    $('#cruise').on('click', function() {
+    $('#hiddenField').val('Круиз');
+    $('#exampleModalLabel').show();
+    $('#modal-footer').show();
+    $('#contactForm_1').show();
+    var element = document.getElementById("msgSubmit");
+                element.classList.add("hidden");
+    });
+    
+    // 6 кнопка калькулятор
+    $('#calculator').on('click', function() {
+    $('#exampleModalLabel').show();
+
+    });
+});
+</script>
+
+<script>
+  $(document).ready(function () {
+    $("form").submit(function () {
+        // Получение ID формы
+        var formID = $(this).attr('id');
+        // Добавление решётки к имени ID
+        var formNm = $('#' + formID);
+        $.ajax({
+            type: "POST",
+            url: '/mail.php',
+            data: formNm.serialize(),
+            
+            success: function (data) {
+                // Вывод текста результата отправки
+                $('#exampleModalLabel').hide('slow');
+                $('#modal-footer').hide('slow');
+                $('#contactForm_1').hide('slow');
+                $('#msgSubmit').removeClass( "hidden" );
+                document.getElementById('contactForm_1').reset();
+                
+            },
+            error: function (jqXHR, text, error) {
+                // Вывод текста ошибки отправки
+                $(formNm).html(error);
+            }
+        });
+        return false;
+    });
+});
+</script>
+    </body>
+</html>
