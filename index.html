@@ -582,7 +582,7 @@
                     $('#modal-footer').hide('slow');
                     $('#contactForm_1').hide('slow');
                     $('#msgSubmit').removeClass("hidden"); // Убедись, что в этом блоке есть текст
-                    document.getElementById('contactForm_1').reset();
+                    $('#contactForm_1')[0].reset();
                 } else {
                     // ОШИБКА! Можно показать сообщение об ошибке.
                     $('#exampleModalLabel').hide('slow');
