@@ -244,7 +244,7 @@ input[type="date"] {
 }
 
 
-.price-box {padding: 30px 40px;
+.price-box {padding: 30px 35px;
 			background: #fff;
 			margin: 3rem 0rem 1rem;
 			min-height: 85%;
@@ -1483,7 +1483,7 @@ progress {
   .col-lg {
     flex: 1 0 0%;
   }
-  .text-info {min-height: 474px !important;}
+  .text-info {min-height: 756px !important;}
   .row-cols-lg-auto > * {
     flex: 0 0 auto;
     width: auto;
