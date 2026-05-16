@@ -427,6 +427,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Записываем туда результаты расчета
             hiddenField.value = resultsTextForForm;
         }
+        const birthDay = document.getElementById('birthDay');
+        if (birthDay) {
+            // Записываем туда результаты расчета
+            birthDay.value = birthDate;
+        }
     });
 
     // 5. Добавляем кнопку в конец контейнера с результатами
